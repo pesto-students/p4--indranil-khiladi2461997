@@ -1,0 +1,22 @@
+class Person
+  {
+    name;
+    constructor(name){
+      this.name = name;
+    }
+    
+    
+  }
+
+class Teacher extends Person{
+  teaches;
+  constructor(name, teaches){
+    super(name);
+    this.teaches = teaches;
+  }
+  
+  teach(){
+    console.log(`${this.name} is now teaching ${this.teaches}`);
+  }
+  
+}
