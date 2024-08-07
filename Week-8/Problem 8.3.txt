@@ -1,0 +1,53 @@
+class TreeNode {
+  constructor(val = 0, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+function levelOrder(root) {
+  if (!root) return [];
+
+  const result = [];
+  const queue = [root];
+
+  while (queue.length) {
+    const levelSize = queue.length;
+    const levelValues = [];
+
+    for (let i = 0; i < levelSize; i++) {
+      const node = queue.shift();
+      levelValues.push(node.val);
+
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
+      }
+    }
+
+    result.push(levelValues);
+  }
+
+  return result;
+}
+
+// Example usage:
+// Constructing the binary tree [3,9,20,null,null,15,7]
+const root1 = new TreeNode(3);
+root1.left = new TreeNode(9);
+root1.right = new TreeNode(20);
+root1.right.left = new TreeNode(15);
+root1.right.right = new TreeNode(7);
+
+// Constructing the binary tree [1]
+const root2 = new TreeNode(1);
+
+// Constructing an empty tree
+const root3 = null;
+
+console.log(levelOrder(root1)); // Output: [[3], [9, 20], [15, 7]]
+console.log(levelOrder(root2)); // Output: [[1]]
+console.log(levelOrder(root3)); // Output: []

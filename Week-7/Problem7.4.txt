@@ -1,0 +1,27 @@
+function isBalanced(expression) {
+  const stack = [];
+  const bracketMap = { ')': '(', '}': '{', ']': '[' };
+
+  for (const char of expression) {
+    if (bracketMap[char]) {
+      if (stack.length === 0 || bracketMap[char] !== stack.pop()) {
+        return false;
+      }
+    } else if (Object.values(bracketMap).includes(char)) {
+      stack.push(char);
+    }
+  }
+
+  return stack.length === 0;
+}
+
+// Example usage:
+const expression1 = "{([])}";
+const expression2 = "[(])";
+const expression3 = "()";
+const expression4 = "([]";
+
+console.log(isBalanced(expression1)); // Output: True
+console.log(isBalanced(expression2)); // Output: False
+console.log(isBalanced(expression3)); // Output: True
+console.log(isBalanced(expression4)); // Output: False

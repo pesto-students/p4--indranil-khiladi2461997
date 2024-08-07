@@ -1,0 +1,28 @@
+function sort012(arr) {
+  let low = 0;
+  let mid = 0;
+  let high = arr.length - 1;
+
+  while (mid <= high) {
+    if (arr[mid] === 0) {
+      [arr[low], arr[mid]] = [arr[mid], arr[low]];
+      low++;
+      mid++;
+    } else if (arr[mid] === 1) {
+      mid++;
+    } else {
+      [arr[mid], arr[high]] = [arr[high], arr[mid]];
+      high--;
+    }
+  }
+}
+
+// Example usage:
+const arr1 = [0, 2, 1, 2, 0];
+const arr2 = [0, 1, 0];
+
+sort012(arr1);
+sort012(arr2);
+
+console.log(arr1); // Output: [0, 0, 1, 2, 2]
+console.log(arr2); // Output: [0, 0, 1]

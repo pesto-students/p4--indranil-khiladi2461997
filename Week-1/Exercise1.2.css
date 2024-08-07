@@ -1,0 +1,93 @@
+html * {
+  font-family: "Lato", sans-serif;
+}
+.parentDiv {
+  display: flex;
+  flex-direction: row;
+}
+.navbar {
+  background: silver;
+  display: grid;
+  padding: 6px;
+  justify-items: center;
+  align-items: center;
+  height: 630px;
+}
+.Header {
+  background: #323030;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 45px;
+}
+.albumMainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 50px;
+}
+.albumName {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.singerName {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.play {
+  color: #ffffff;
+}
+.albumDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: center;
+}
+.tagsDiv {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+}
+.tags {
+  font-family: auto;
+  color: white;
+  margin-left: 10px;
+}
+.tableBtn {
+  background: transparent;
+  border: 1px solid black;
+  color: blue;
+}
+table {
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #F0F0F0;
+}
+.footerLogo {
+  width: 85px;
+}
+.genre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 10px;
+}
+.footer {
+  background-color: #42689b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 10px;
+}

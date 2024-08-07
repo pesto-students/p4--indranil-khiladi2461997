@@ -1,0 +1,63 @@
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+
+  enqueue(element) {
+    this.queue.push(element);
+  }
+
+  dequeue() {
+    return this.queue.shift();
+  }
+
+  isEmpty() {
+    return this.queue.length === 0;
+  }
+}
+
+function validPath(n, edges, source, destination) {
+  
+  const graph = {};
+  for (const [u, v] of edges) {
+    if (!graph[u]) {
+      graph[u] = [];
+    }
+    if (!graph[v]) {
+      graph[v] = [];
+    }
+    graph[u].push(v);
+    graph[v].push(u);
+  }
+
+  
+  if (source === destination) {
+    return true;
+  }
+
+  
+  const queue = new Queue();
+  queue.enqueue(source);
+  const visited = new Set([source]);
+
+  while (!queue.isEmpty()) {
+    const node = queue.dequeue();
+
+    
+    for (const neighbor of graph[node]) {
+      if (neighbor === destination) {
+        return true;
+      }
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.enqueue(neighbor);
+      }
+    }
+  }
+
+  return false;
+}
+
+// Example usage:
+console.log(validPath(3, [[0, 1], [1, 2], [2, 0]], 0, 2)); // Output: True
+console.log(validPath(6, [[0, 1], [0, 2], [3, 5], [5, 4], [4, 3]], 0, 5)); // Output: False

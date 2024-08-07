@@ -1,0 +1,12 @@
+.main {
+  height: 100vh;
+  background: aliceblue;
+}
+.main > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main > div >span {
+  font-size: 14px;
+}

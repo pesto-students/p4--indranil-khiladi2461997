@@ -1,0 +1,17 @@
+.HeaderNav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+.HeaderNavHeading{
+    font-size: 22px;
+    font-weight: 700;
+    color: #60cd5f;
+}
+.HeaderNav >div >span{
+    color: #2dbece;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+}

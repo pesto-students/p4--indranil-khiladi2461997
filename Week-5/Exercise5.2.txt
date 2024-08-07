@@ -1,0 +1,13 @@
+function vowelCount(str) {
+  const vowelMap = new Map();
+  const vowels = "aeiou";
+
+  for (let char of str) {
+    const lowerCaseChar = char.toLowerCase();
+    if (vowels.includes(lowerCaseChar)) {
+      vowelMap.set(lowerCaseChar, (vowelMap.get(lowerCaseChar) || 0) + 1);
+    }
+  }
+
+  return vowelMap;
+}

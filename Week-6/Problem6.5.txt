@@ -1,0 +1,22 @@
+function findPairWithDifference(A, B) {
+  const seen = new Set();
+
+  for (const num of A) {
+    if (seen.has(num + B) || seen.has(num - B)) {
+      return 1;
+    }
+    seen.add(num);
+  }
+
+  return 0;
+}
+
+// Example usage:
+const A1 = [5, 10, 3, 2, 50, 80];
+const B1 = 78;
+
+const A2 = [-10, 20];
+const B2 = 30;
+
+console.log(findPairWithDifference(A1, B1)); // Output: 1
+console.log(findPairWithDifference(A2, B2)); // Output: 1

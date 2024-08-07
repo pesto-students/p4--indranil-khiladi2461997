@@ -1,0 +1,66 @@
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
+function leftShiftLinkedList(head, k) {
+  if (!head || k === 0) {
+    return head;
+  }
+
+  
+  let length = 1;
+  let current = head;
+  while (current.next) {
+    current = current.next;
+    length++;
+  }
+
+  
+  k = k % length; 
+
+  
+  current.next = head;
+
+  
+  let stepsToNewHead = length - k;
+  let newTail = head;
+  for (let i = 0; i < stepsToNewHead - 1; i++) {
+    newTail = newTail.next;
+  }
+
+  const newHead = newTail.next;
+  newTail.next = null;
+
+  return newHead;
+}
+
+
+function printLinkedList(head) {
+  let current = head;
+  while (current) {
+    console.log(current.val, end=" ");
+    current = current.next;
+  }
+  console.log();
+}
+
+// Example usage:
+// Creating the linked list 2->4->7->8->9
+const head = new ListNode(2);
+head.next = new ListNode(4);
+head.next.next = new ListNode(7);
+head.next.next.next = new ListNode(8);
+head.next.next.next.next = new ListNode(9);
+
+const k = 3;
+console.log("Original Linked List:");
+printLinkedList(head);
+
+// Left shift the linked list by k nodes
+const shiftedHead = leftShiftLinkedList(head, k);
+
+console.log("Left Shifted Linked List:");
+printLinkedList(shiftedHead);
