@@ -1,0 +1,25 @@
+function findJudge(n, trust) {
+  
+  const trusts = new Array(n + 1).fill(0); 
+  const trustedBy = new Array(n + 1).fill(0); 
+
+  
+  for (const [a, b] of trust) {
+    trusts[a]++;
+    trustedBy[b]++;
+  }
+
+  
+  for (let person = 1; person <= n; person++) {
+    if (trusts[person] === 0 && trustedBy[person] === n - 1) {
+      return person;
+    }
+  }
+
+  return -1;
+}
+
+// Example usage:
+console.log(findJudge(2, [[1, 2]])); // Output: 2
+console.log(findJudge(3, [[1, 3], [2, 3]])); // Output: 3
+console.log(findJudge(3, [[1, 3], [2, 3], [3, 1]])); // Output: -1

@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MYSQL first ",
+            "database": "pesto_week12",
+            "username": "root@localhost",
+            "password": "0212"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "pesto_week12",
+            "database": "pesto_week12",
+            "username": "root",
+            "password": "0212"
+        }
+    ]
+}

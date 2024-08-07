@@ -1,0 +1,54 @@
+Step1: const mathOperations = {
+    sum: function(a, b) {
+        return a + b;
+    },
+    diff: function(a, b) {
+        return a - b;
+    },
+    product: function(a, b) {
+        return a * b;
+    }
+};
+
+module.exports = mathOperations;
+
+
+Step2: npm install --save-dev jest
+
+Step3:Update your package.json to include a test script. Here is an example of what your package.json might look like after the update:
+ {
+  "name": "math-operations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mathOperations.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
+
+Step4: const mathOperations = require('./mathOperations');
+
+describe('Math Operations', () => {
+    test('should return the sum of two numbers', () => {
+        expect(mathOperations.sum(1, 2)).toBe(3);
+        expect(mathOperations.sum(-1, 1)).toBe(0);
+        expect(mathOperations.sum(0, 0)).toBe(0);
+    });
+
+    test('should return the difference of two numbers', () => {
+        expect(mathOperations.diff(2, 1)).toBe(1);
+        expect(mathOperations.diff(1, 2)).toBe(-1);
+        expect(mathOperations.diff(0, 0)).toBe(0);
+    });
+
+    test('should return the product of two numbers', () => {
+        expect(mathOperations.product(2, 3)).toBe(6);
+        expect(mathOperations.product(-2, 3)).toBe(-6);
+        expect(mathOperations.product(0, 3)).toBe(0);
+    });
+});
+
+Step5: npm test
