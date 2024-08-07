@@ -1,0 +1,15 @@
+.addBtn {
+  background: purple;
+  color: #ffffff;
+  border: none;
+}
+.resetBtn {
+  background: #d9d9d9;
+  color: #000000;
+  border: none;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

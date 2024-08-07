@@ -1,0 +1,3 @@
+to run the project:
+cd todo-list
+npm run dev
